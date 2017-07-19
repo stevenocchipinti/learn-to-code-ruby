@@ -37,7 +37,7 @@ require 'io/console'
 print "Player 1, pick a number: "
 number = STDIN.noecho(&:gets)
 
-5.times do
+loop do
   puts
   puts "Player 2, try to guess the number!"
   print "Guess: "
@@ -45,11 +45,10 @@ number = STDIN.noecho(&:gets)
 
   if number == guess
     puts "Well done! You got it right!"
+    exit
   elsif number > guess
     puts "Nope... higher"
   elsif number < guess
     puts "Nope... lower"
   end
 end
-
-puts "Game over!"
