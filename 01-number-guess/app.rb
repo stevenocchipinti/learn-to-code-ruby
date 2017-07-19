@@ -34,11 +34,12 @@
 
 require 'io/console'
 
-print "Player 1, pick a number: "
-number = STDIN.noecho(&:gets).to_i
+puts "Welcome to the number guessing game - its so much fun!"
+
+number = rand 0..20
+puts "I've thought of a number between 0 - 20, you have to guess it."
 
 count = 0
-
 loop do
   puts
   puts "Player 2, try to guess the number!"
