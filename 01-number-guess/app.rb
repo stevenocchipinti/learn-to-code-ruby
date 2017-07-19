@@ -42,4 +42,4 @@ puts "Player 2, try to guess the number!"
 print "Guess: "
 guess = gets
 
-puts number == guess
+puts number == guess ? "Well done! You got it right!" : "Oops, nice try"
