@@ -44,8 +44,67 @@ guess = gets
 
 if number == guess
   puts "Well done! You got it right!"
+  exit
 elsif number > guess
   puts "Nope... higher"
 elsif number < guess
   puts "Nope... lower"
 end
+
+puts
+puts "Player 2, try to guess the number!"
+print "Guess: "
+guess = gets
+
+if number == guess
+  puts "Well done! You got it right!"
+  exit
+elsif number > guess
+  puts "Nope... higher"
+elsif number < guess
+  puts "Nope... lower"
+end
+
+puts
+puts "Player 2, try to guess the number!"
+print "Guess: "
+guess = gets
+
+if number == guess
+  puts "Well done! You got it right!"
+  exit
+elsif number > guess
+  puts "Nope... higher"
+elsif number < guess
+  puts "Nope... lower"
+end
+
+puts
+puts "Player 2, try to guess the number!"
+print "Guess: "
+guess = gets
+
+if number == guess
+  puts "Well done! You got it right!"
+  exit
+elsif number > guess
+  puts "Nope... higher"
+elsif number < guess
+  puts "Nope... lower"
+end
+
+puts
+puts "Player 2, try to guess the number!"
+print "Guess: "
+guess = gets
+
+if number == guess
+  puts "Well done! You got it right!"
+  exit
+elsif number > guess
+  puts "Nope... higher"
+elsif number < guess
+  puts "Nope... lower"
+end
+
+puts "Game omer!"
