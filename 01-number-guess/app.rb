@@ -37,16 +37,19 @@ require 'io/console'
 print "Player 1, pick a number: "
 number = STDIN.noecho(&:gets).to_i
 
+count = 0
+
 loop do
   puts
   puts "Player 2, try to guess the number!"
   print "Guess: "
   guess = gets.strip
 
+  count += 1
   exit if guess == "exit"
 
   if number == guess.to_i
-    puts "Well done! You got it right!"
+    puts "Well done! You got it right in #{count} guesses!"
     exit
   elsif number > guess.to_i
     puts "Nope... higher"
