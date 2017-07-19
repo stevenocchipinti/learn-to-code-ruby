@@ -42,4 +42,10 @@ puts "Player 2, try to guess the number!"
 print "Guess: "
 guess = gets
 
-puts number == guess ? "Well done! You got it right!" : "Oops, nice try"
+if number == guess
+  puts "Well done! You got it right!"
+elsif number > guess
+  puts "Nope... higher"
+elsif number < guess
+  puts "Nope... lower"
+end
