@@ -43,3 +43,13 @@ Learning outcomes
   - Incrementing a counter
   - Generating a random number
   - Converting between data types (`int` and `string`)
+
+
+### 2. Guest List (arrays and hashes)
+
+  - Data structures (arrays and hashes)
+  - Parsing JSON and CSV
+  - Loops (`each`)
+  - Date/Time
+  - Control flow (`if`, `elsif`, `case`, etc.)
+  - Functions
