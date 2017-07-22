@@ -70,5 +70,7 @@ data = JSON.parse(file_contents)
 data["guests"].each do |guest|
   this_year = Time.new.year
   age = this_year - guest["birthYear"]
-  puts "#{guest["firstName"]} #{guest["secondName"]} is approximately #{age} years old"
+  if age >= 18
+    puts "#{guest["firstName"]} #{guest["secondName"]} is approximately #{age} years old"
+  end
 end
