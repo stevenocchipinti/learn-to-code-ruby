@@ -62,3 +62,11 @@ Learning outcomes
   - Test Driven Development
   - Math library
   - Hashes
+
+
+### 4. Bank Accounts (functions and classes)
+
+  - Classes
+  - Default values for functions
+  - Exceptions
+  - Tests and TDD
