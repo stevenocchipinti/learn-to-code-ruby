@@ -67,12 +67,23 @@ require 'json'
 file_contents = File.read("guests.json")
 data = JSON.parse(file_contents)
 
+this_year = Time.new.year
+underage = []
+
 data["guests"].each do |guest|
   this_year = Time.new.year
   age = this_year - guest["birthYear"]
   if age >= 18
     puts "#{guest["firstName"]} #{guest["secondName"]} is approximately #{age} years old"
   else
-    puts "#{guest["firstName"]} #{guest["secondName"]} is underage and NOT allowed in"
+    underage << guest
   end
+end
+
+puts
+puts "The following guests are underage and NOT allowed in:"
+
+underage.each do |guest|
+  age = this_year - guest["birthYear"]
+  puts "- #{guest["firstName"]} #{guest["secondName"]} (age: #{age})"
 end
