@@ -68,5 +68,7 @@ file_contents = File.read("guests.json")
 data = JSON.parse(file_contents)
 
 data["guests"].each do |guest|
-  puts "#{guest["firstName"]} #{guest["secondName"]} was born in #{guest["birthYear"]}"
+  this_year = Time.new.year
+  age = this_year - guest["birthYear"]
+  puts "#{guest["firstName"]} #{guest["secondName"]} is approximately #{age} years old"
 end
