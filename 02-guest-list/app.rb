@@ -72,5 +72,7 @@ data["guests"].each do |guest|
   age = this_year - guest["birthYear"]
   if age >= 18
     puts "#{guest["firstName"]} #{guest["secondName"]} is approximately #{age} years old"
+  else
+    puts "#{guest["firstName"]} #{guest["secondName"]} is underage and NOT allowed in"
   end
 end
