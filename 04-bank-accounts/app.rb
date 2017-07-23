@@ -37,6 +37,7 @@ class Account
   end
 
   def withdraw(amount)
+    raise "Insufficient funds" if @balance < amount
     @balance -= amount
   end
 end
@@ -94,8 +95,8 @@ assert_equal account.balance, 50
 # that transaction from going ahead.
 # ------------------------------------------------------------------------------
 
-# account = Account.new 100
-# assert_raise { account.withdraw 101 }
+account = Account.new 100
+assert_raise { account.withdraw 101 }
 
 
 # ------------------------------------------------------------------------------
