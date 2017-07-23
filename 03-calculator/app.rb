@@ -25,7 +25,7 @@
 
 
 def area_of_rectangle(width, height)
-  # TODO: Implement me!
+  width * height
 end
 
 
