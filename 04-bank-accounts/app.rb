@@ -40,6 +40,11 @@ class Account
     raise "Insufficient funds" if @balance < amount
     @balance -= amount
   end
+
+  def transfer(amount, beneficiary)
+    withdraw amount
+    beneficiary.deposit amount
+  end
 end
 
 
@@ -105,11 +110,11 @@ assert_raise { account.withdraw 101 }
 # amount to transfer and beneficiary account as arguments. For example:
 # ------------------------------------------------------------------------------
 
-# my_account = Account.new 100
-# other_account = Account.new 100
-# my_account.transfer 50, other_account
-# assert_equal my_account.balance, 50
-# assert_equal other_account.balance, 150
+my_account = Account.new 100
+other_account = Account.new 100
+my_account.transfer 50, other_account
+assert_equal my_account.balance, 50
+assert_equal other_account.balance, 150
 
 
 # ------------------------------------------------------------------------------
