@@ -25,13 +25,11 @@
 
 
 class Account
+  attr_reader :balance
+
   # NOTE: This is the method that gets called when you use Account.new
   def initialize(balance)
     @balance = balance
-  end
-
-  def balance
-    @balance
   end
 end
 
