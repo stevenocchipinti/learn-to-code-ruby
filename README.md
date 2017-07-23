@@ -53,3 +53,12 @@ Learning outcomes
   - Date/Time
   - Control flow (`if`, `elsif`, `case`, etc.)
   - Functions
+
+
+### 3. Calculator (functions and tests)
+
+  - More functions (nested function calls and re-use)
+  - Test assertions
+  - Test Driven Development
+  - Math library
+  - Hashes
