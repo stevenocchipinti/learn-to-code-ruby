@@ -28,7 +28,7 @@ class Account
   attr_reader :balance
 
   # NOTE: This is the method that gets called when you use Account.new
-  def initialize(balance)
+  def initialize(balance=0)
     @balance = balance
   end
 end
@@ -57,8 +57,8 @@ assert_equal account.balance, 10
 # use that value instead.
 # ------------------------------------------------------------------------------
 
-# account = Account.new
-# assert_equal account.balance, 0
+account = Account.new
+assert_equal account.balance, 0
 
 
 # ------------------------------------------------------------------------------
