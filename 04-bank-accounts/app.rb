@@ -29,6 +29,10 @@ class Account
   def initialize(balance)
     @balance = balance
   end
+
+  def balance
+    @balance
+  end
 end
 
 
