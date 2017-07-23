@@ -35,6 +35,10 @@ class Account
   def deposit(amount)
     @balance += amount
   end
+
+  def withdraw(amount)
+    @balance -= amount
+  end
 end
 
 
@@ -79,10 +83,10 @@ assert_equal account.balance, 150
 # 4. Add a withdraw method that will subtract funds from the balance.
 # ------------------------------------------------------------------------------
 
-# account = Account.new 100
-# assert_equal account.balance, 100
-# account.withdraw 50
-# assert_equal account.balance, 50
+account = Account.new 100
+assert_equal account.balance, 100
+account.withdraw 50
+assert_equal account.balance, 50
 
 
 # ------------------------------------------------------------------------------
