@@ -36,6 +36,10 @@ def volume_of_cylinder(radius, height)
   area_of_circle(10) * height
 end
 
+def volume_of_cylinder_from_hash(cylinder_hash)
+  volume_of_cylinder(cylinder_hash[:radius], cylinder_hash[:height])
+end
+
 
 ################################################################################
 #
@@ -83,8 +87,8 @@ assert_equal area, 6283.185307179587
 #   { radius: 10, height: 20 }
 # ------------------------------------------------------------------------------
 
-# area = volume_of_cylinder_from_hash radius: 10, height: 20
-# assert_equal area, 6283.185307179587
+area = volume_of_cylinder_from_hash radius: 10, height: 20
+assert_equal area, 6283.185307179587
 
 
 # ------------------------------------------------------------------------------
