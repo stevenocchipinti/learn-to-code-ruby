@@ -31,6 +31,10 @@ class Account
   def initialize(balance=0)
     @balance = balance
   end
+
+  def deposit(amount)
+    @balance += amount
+  end
 end
 
 
@@ -65,10 +69,10 @@ assert_equal account.balance, 0
 # 3. Add a deposit method that will add funds to the balance.
 # ------------------------------------------------------------------------------
 
-# account = Account.new 100
-# assert_equal account.balance, 100
-# account.deposit 50
-# assert_equal account.balance, 150
+account = Account.new 100
+assert_equal account.balance, 100
+account.deposit 50
+assert_equal account.balance, 150
 
 
 # ------------------------------------------------------------------------------
