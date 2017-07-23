@@ -62,10 +62,7 @@
 #
 ################################################################################
 
-require 'json'
-
-file_contents = File.read("guests.json")
-data = JSON.parse(file_contents)
+require 'csv'
 
 
 def fullname(guest)
@@ -73,12 +70,12 @@ def fullname(guest)
 end
 
 def age(guest)
-  Time.new.year - guest["birthYear"]
+  Time.new.year - guest["birthYear"].to_i
 end
 
 
 underage = []
-data["guests"].each do |guest|
+CSV.foreach("guests.csv", headers: true) do |guest|
   if age(guest) >= 18
     puts "#{fullname(guest)} is approximately #{age(guest)} years old"
   else
