@@ -28,6 +28,10 @@ def area_of_rectangle(width, height)
   width * height
 end
 
+def area_of_circle(radius)
+  Math::PI * (radius * radius)
+end
+
 
 ################################################################################
 #
@@ -53,8 +57,8 @@ assert_equal area, 200
 #   Math::PI
 # ------------------------------------------------------------------------------
 
-# area = area_of_circle 10
-# assert_equal area, 314.1592653589793
+area = area_of_circle 10
+assert_equal area, 314.1592653589793
 
 
 # ------------------------------------------------------------------------------
