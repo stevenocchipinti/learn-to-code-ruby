@@ -32,6 +32,10 @@ def area_of_circle(radius)
   Math::PI * (radius * radius)
 end
 
+def volume_of_cylinder(radius, height)
+  area_of_circle(10) * height
+end
+
 
 ################################################################################
 #
@@ -69,8 +73,8 @@ assert_equal area, 314.1592653589793
 # Remember the volume of a cylinder is: πr²h (area * height)
 # ------------------------------------------------------------------------------
 
-# area = volume_of_cylinder 10, 20
-# assert_equal area, 6283.185307179587
+area = volume_of_cylinder 10, 20
+assert_equal area, 6283.185307179587
 
 
 # ------------------------------------------------------------------------------
