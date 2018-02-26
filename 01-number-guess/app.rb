@@ -32,14 +32,19 @@
 #
 ################################################################################
 
+# This line is needed for the `noecho` trick, explained below
 require 'io/console'
 
 print "Player 1, pick a number: "
-number = STDIN.noecho(&:gets)
+number = STDIN.noecho(&:gets).chomp.to_i
+
+# NOTE: The above line uses `STDIN.noecho` and is basically the same as:
+#   number = gets
+# except the characters that the user types in are hidden for extra security
 
 puts
 puts "Player 2, try to guess the number!"
 print "Guess: "
-guess = gets
+guess = gets.chomp.to_i
 
 puts number == guess
