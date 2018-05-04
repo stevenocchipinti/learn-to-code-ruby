@@ -1,8 +1,19 @@
 ################################################################################
 #
-#                        Number Guessing Game Exercises
-#                        ------------------------------
+#                             Number Guessing Game
+#                             --------------------
 #
+# Pre-requisite knowledge:
+#
+#   - Variables
+#   - Getting user input, newline characters
+#   - Comparison operators (`==`, `<=`, `>=`, etc.)
+#   - Data structures (arrays and hashes)
+#   - Control flow (`if`, `elsif`, `case`, etc.)
+#   - Loops (finite, infinite and loop control flow like: `break`, `continue`)
+#   - Incrementing a number
+#   - Generating a random number
+#   - Converting between data types (`int` and `string`)
 #
 # Exercises:
 #

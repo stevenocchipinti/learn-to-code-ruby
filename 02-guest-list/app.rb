@@ -1,12 +1,19 @@
 ################################################################################
 #
-#                             Guest List Exercises
-#                             --------------------
-#
+#                                  Guest List
+#                                  ----------
 #
 # This application reads a guest list from an exported JSON file and prints out
 # the guests names and ages.
 #
+# Pre-requisite knowledge:
+#
+#   - Data structures (arrays and hashes)
+#   - Parsing JSON and CSV
+#   - Loops (`each`)
+#   - Date/Time
+#   - Control flow (`if`, `elsif`, `case`, etc.)
+#   - Functions
 #
 # Exercises:
 #

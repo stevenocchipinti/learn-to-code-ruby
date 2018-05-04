@@ -1,11 +1,18 @@
 ################################################################################
 #
-#                            Bank Account Exercise
-#                            ---------------------
+#                                 Bank Account
+#                                 ------------
 #
 #
 # This application simulates a bank where funds can be transferred from one
 # account to another.
+#
+# Pre-requisite knowledge:
+#
+#   - Classes
+#   - Default values for functions
+#   - Exceptions
+#   - Tests and TDD
 #
 # This exercise is broken into two parts:
 #   1. An Account class: This has the logic of a bank account

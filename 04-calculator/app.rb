@@ -1,11 +1,19 @@
 ################################################################################
 #
-#                             Calculator Exercise
-#                             -------------------
+#                                  Calculator
+#                                  ----------
 #
 #
 # This file contains a collection of functions that are useful for calculating
 # things like the area of a shape or converting between units.
+#
+# Pre-requisite knowledge:
+#
+#   - More functions (nested function calls and re-use)
+#   - Test assertions
+#   - Test Driven Development
+#   - Math library
+#   - Hashes
 #
 # This exercise is broken into two parts:
 #   1. Some functions: These have the logic of the calculations
