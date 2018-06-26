@@ -51,23 +51,23 @@ RSpec.describe World do
     end
   end
 
-  describe "#is_valid?" do
+  describe "#is_valid_position?" do
     before { world.place_robot(x: 0, y: 1, direction: :east) }
 
     it "returns true if the position is valid" do
-      expect(world.is_valid? x: 0, y: 0).to be true
-      expect(world.is_valid? x: 0, y: 1).to be true
-      expect(world.is_valid? x: 1, y: 1).to be true
-      expect(world.is_valid? x: 4, y: 4).to be true
-      expect(world.is_valid? x: 2, y: 3).to be true
-      expect(world.is_valid? x: 2, y: 4).to be true
+      expect(world.is_valid_position? x: 0, y: 0).to be true
+      expect(world.is_valid_position? x: 0, y: 1).to be true
+      expect(world.is_valid_position? x: 1, y: 1).to be true
+      expect(world.is_valid_position? x: 4, y: 4).to be true
+      expect(world.is_valid_position? x: 2, y: 3).to be true
+      expect(world.is_valid_position? x: 2, y: 4).to be true
     end
 
     it "returns false if the position is not valid" do
-      expect(world.is_valid? x: -1, y: 0).to be false
-      expect(world.is_valid? x: 10, y: 10).to be false
-      expect(world.is_valid? x: 4, y: 40).to be false
-      expect(world.is_valid? x: 20, y: 3).to be false
+      expect(world.is_valid_position? x: -1, y: 0).to be false
+      expect(world.is_valid_position? x: 10, y: 10).to be false
+      expect(world.is_valid_position? x: 4, y: 40).to be false
+      expect(world.is_valid_position? x: 20, y: 3).to be false
     end
   end
 

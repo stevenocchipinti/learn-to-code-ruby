@@ -1,22 +1,5 @@
-# A robot data structure with immutable properties
-class Robot
-  attr_reader :x, :y, :direction
-  def initialize(x: nil, y: nil, direction: nil)
-    @x, @y, @direction = x, y, direction
-    self.freeze
-  end
-end
-
-
-# A target data structure with immutable properties
-class Target
-  attr_reader :x, :y, :callback
-  def initialize(x: nil, y: nil, callback: -> {})
-    @x, @y, @callback = x, y, callback
-    self.freeze
-  end
-end
-
+require_relative './robot'
+require_relative './target'
 
 # Underlying data structure
 class World
@@ -31,17 +14,19 @@ class World
   end
 
   def place_robot(x:, y:, direction:)
+    return self unless is_valid_position? x: x, y: y
     @robot = Robot.new x: x, y: y, direction: direction
     self
   end
 
   def place_target(x: nil, y: nil, when_reached: -> {})
     random_position = random_available_position
-    @target = Target.new(
+    target = Target.new(
       x: x || random_position.fetch(:x),
       y: y || random_position.fetch(:y),
       callback: when_reached
     )
+    @target = target if is_valid_position? x: target.x, y: target.y
     self
   end
 
@@ -58,8 +43,8 @@ class World
     end
 
     new_robot = Robot.new(x: x, y: y, direction: @robot.direction)
-    if is_valid?(x: x, y: y)
-      @robot = new_robot 
+    if is_valid_position?(x: x, y: y)
+      @robot = new_robot
       @target.callback.call if is_target?(x: x, y: y)
     end
 
@@ -67,29 +52,23 @@ class World
   end
 
   def rotate_robot_left
-    i = DIRECTIONS.find_index @robot.direction
-    @robot = Robot.new(
-      x: @robot.x,
-      y: @robot.y,
-      direction: DIRECTIONS[(i-1) % 4]
-    )
+    rotate_robot(-1) if @robot.direction
+    self
   end
 
   def rotate_robot_right
-    i = DIRECTIONS.find_index @robot.direction
-    @robot = Robot.new(
-      x: @robot.x,
-      y: @robot.y,
-      direction: DIRECTIONS[(i+1) % 4]
-    )
+    rotate_robot(1) if @robot.direction
+    self
   end
 
-  def is_valid?(x:, y:)
+  def is_valid_position?(x:, y:)
     x&.between?(0, width - 1) && y&.between?(0, height - 1)
   end
 
   def is_available?(x:, y:)
-    is_valid?(x: x, y: y) && !is_robot?(x: x, y: y) && !is_target?(x: x, y: y)
+    is_valid_position?(x: x, y: y) &&
+      !is_robot?(x: x, y: y) &&
+      !is_target?(x: x, y: y)
   end
 
   private
@@ -100,6 +79,15 @@ class World
 
   def is_robot?(x:, y:)
     @robot.x == x && @robot.y == y
+  end
+
+  def rotate_robot(n)
+    i = DIRECTIONS.find_index @robot.direction
+    @robot = Robot.new(
+      x: @robot.x,
+      y: @robot.y,
+      direction: DIRECTIONS[(i+n) % 4]
+    )
   end
 
   def random_available_position
