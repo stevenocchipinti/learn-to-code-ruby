@@ -16,8 +16,8 @@ class World
     self
   end
 
-  def place_target(x:, y:)
-    @target = OpenStruct.new x: x, y: y
+  def place_target(x:, y:, when_reached: -> {})
+    @target = OpenStruct.new x: x, y: y, callback: when_reached
     self
   end
 
@@ -33,9 +33,12 @@ class World
       x, y = @robot.x - 1, @robot.y
     end
 
+    new_robot = OpenStruct.new(x: x, y: y, direction: @robot.direction)
     if is_valid?(x: x, y: y)
-      @robot = OpenStruct.new(x: x, y: y, direction: @robot.direction)
+      @robot = new_robot 
+      @target.callback.call if is_target?(x: x, y: y)
     end
+
     self
   end
 
@@ -43,15 +46,7 @@ class World
     x&.between?(0, width - 1) && y&.between?(0, height - 1)
   end
 
-  def is_available?(x:, y:)
-    is_valid?(x: x, y: y) && !is_robot?(x: x, y: y) && !is_target?(x: x, y: y)
-  end
-
   private
-
-  def is_robot?(x:, y:)
-    @robot.x == x && @robot.y == y
-  end
 
   def is_target?(x:, y:)
     @target.x == x && @target.y == y

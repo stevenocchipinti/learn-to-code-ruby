@@ -2,7 +2,7 @@ require_relative './lib/game'
 
 game = Game.new(width: 5, height: 5)
 game.place_robot(x: 0, y: 0, direction: :east)
-game.place_target(x: 4, y: 4)
+game.place_target(x: 1, y: 0)
 
 game.move_robot
 game.move_robot

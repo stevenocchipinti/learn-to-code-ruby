@@ -29,7 +29,11 @@ class Game
   end
 
   def place_target(x:, y:)
-    @world.place_target(x: x, y: y)
+    @world.place_target(
+      x: x,
+      y: y,
+      when_reached: lambda(&method(:win!))
+    )
     print
   end
 
@@ -52,5 +56,12 @@ class Game
   def take_turn
     sleep @delay
     @moves += 1
+  end
+
+  def win!
+    take_turn
+    print
+    puts "\n  🎉  You win! 🎉  \n\n"
+    exit
   end
 end

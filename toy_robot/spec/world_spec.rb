@@ -30,6 +30,17 @@ RSpec.describe World do
     end
   end
 
+
+  describe "#place_target" do
+    context 'when placing a robot in a valid position' do
+      it 'stores the position of the target' do
+        world.place_target(x: 0, y: 1)
+        expect(world.target.x).to eq 0
+        expect(world.target.y).to eq 1
+      end
+    end
+  end
+
   describe "#is_valid?" do
     before { world.place_robot(x: 0, y: 1, direction: :east) }
 
@@ -47,26 +58,6 @@ RSpec.describe World do
       expect(world.is_valid? x: 10, y: 10).to be false
       expect(world.is_valid? x: 4, y: 40).to be false
       expect(world.is_valid? x: 20, y: 3).to be false
-    end
-  end
-
-  describe "#is_available?" do
-    before { world.place_robot(x: 0, y: 1, direction: :east) }
-
-    it "returns true if the position is available" do
-      expect(world.is_available? x: 0, y: 0).to be true
-      expect(world.is_available? x: 1, y: 1).to be true
-      expect(world.is_available? x: 4, y: 4).to be true
-      expect(world.is_available? x: 2, y: 3).to be true
-      expect(world.is_available? x: 2, y: 4).to be true
-    end
-
-    it "returns false if the position is not available" do
-      expect(world.is_available? x: 0, y: 1).to be false
-      expect(world.is_available? x: -1, y: 0).to be false
-      expect(world.is_available? x: 10, y: 10).to be false
-      expect(world.is_available? x: 4, y: 40).to be false
-      expect(world.is_available? x: 20, y: 3).to be false
     end
   end
 
@@ -108,6 +99,20 @@ RSpec.describe World do
         world.place_robot(x: 4, y: 5, direction: :east).move_robot
         expect(world.robot.x).to eq 4
         expect(world.robot.y).to eq 5
+      end
+    end
+
+    context "when the next position is a target" do
+      before do
+        world.place_robot(x: 0, y: 0, direction: :east)
+        @callback_fired = false
+        callback = -> { @callback_fired = true }
+        world.place_target(x: 1, y: 0, when_reached: callback)
+        world.move_robot
+      end
+
+      it 'calls the when_reached callback' do
+        expect(@callback_fired).to be true
       end
     end
   end
