@@ -33,9 +33,20 @@
 
 
 def area_of_rectangle(width, height)
-  # TODO: Implement me!
+  width * height
 end
 
+def area_of_circle(radius)
+  Math::PI * (radius * radius)
+end
+
+def volume_of_cylinder(radius, height)
+  area_of_circle(radius) * height
+end
+
+def volume_of_cylinder_from_hash(data)
+  volume_of_cylinder data[:radius], data[:height]
+end
 
 ################################################################################
 #
@@ -50,7 +61,7 @@ extend Test::Unit::Assertions
 # 1. Implement the area_of_rectangle function
 # ------------------------------------------------------------------------------
 
-area = area_of_rectangle 10, 20
+area = area_of_rectangle(10, 20)
 assert_equal area, 200
 
 
@@ -61,8 +72,8 @@ assert_equal area, 200
 #   Math::PI
 # ------------------------------------------------------------------------------
 
-# area = area_of_circle 10
-# assert_equal area, 314.1592653589793
+area = area_of_circle 10
+assert_equal area, 314.1592653589793
 
 
 # ------------------------------------------------------------------------------
@@ -73,8 +84,8 @@ assert_equal area, 200
 # Remember the volume of a cylinder is: πr²h (area * height)
 # ------------------------------------------------------------------------------
 
-# area = volume_of_cylinder 10, 20
-# assert_equal area, 6283.185307179587
+area = volume_of_cylinder(10, 20)
+assert_equal area, 6283.185307179587
 
 
 # ------------------------------------------------------------------------------
@@ -83,8 +94,8 @@ assert_equal area, 200
 #   { radius: 10, height: 20 }
 # ------------------------------------------------------------------------------
 
-# area = volume_of_cylinder_from_hash radius: 10, height: 20
-# assert_equal area, 6283.185307179587
+area = volume_of_cylinder_from_hash({radius: 10, height: 20})
+assert_equal area, 6283.185307179587
 
 
 # ------------------------------------------------------------------------------
