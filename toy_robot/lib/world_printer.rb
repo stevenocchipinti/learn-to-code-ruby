@@ -39,9 +39,9 @@ class WorldPrinter
       row = height - 1 - h
       y_axis = sprintf "%3d │", row
       cells = width.times.map do |col|
-        if robot.x == row && robot.y == col
+        if robot.x == col && robot.y == row
           " #{ARROWS[robot.direction]} "
-        elsif target.x == row && target.y == col
+        elsif target.x == col && target.y == row
           " ⭑ "
         else
           "   "

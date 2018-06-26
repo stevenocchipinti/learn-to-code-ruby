@@ -1,7 +1,7 @@
 # User facing robot-related operations
 class RobotController
   attr_reader :turns
-  DELAY = 1
+  DELAY = 0.5
 
   def initialize(robot:, world:, game:)
     @robot = robot
@@ -11,6 +11,7 @@ class RobotController
   end
 
   def move
+    @world.move_robot
     take_turn
     print
   end
