@@ -70,44 +70,44 @@ RSpec.describe World do
     end
   end
 
-  describe "#next_position_for_robot" do
+  describe "#move_robot" do
     context 'when the next position is valid' do
       it 'returns the next position' do
-        world.place_robot(x: 0, y: 0, direction: :north)
-        expect(world.next_position_for_robot.x).to eq 0
-        expect(world.next_position_for_robot.y).to eq 1
+        world.place_robot(x: 0, y: 0, direction: :north).move_robot
+        expect(world.robot.x).to eq 0
+        expect(world.robot.y).to eq 1
 
-        world.place_robot(x: 0, y: 0, direction: :east)
-        expect(world.next_position_for_robot.x).to eq 1
-        expect(world.next_position_for_robot.y).to eq 0
+        world.place_robot(x: 0, y: 0, direction: :east).move_robot
+        expect(world.robot.x).to eq 1
+        expect(world.robot.y).to eq 0
 
-        world.place_robot(x: 4, y: 4, direction: :south)
-        expect(world.next_position_for_robot.x).to eq 4
-        expect(world.next_position_for_robot.y).to eq 3
+        world.place_robot(x: 4, y: 4, direction: :south).move_robot
+        expect(world.robot.x).to eq 4
+        expect(world.robot.y).to eq 3
 
-        world.place_robot(x: 4, y: 4, direction: :west)
-        expect(world.next_position_for_robot.x).to eq 3
-        expect(world.next_position_for_robot.y).to eq 4
+        world.place_robot(x: 4, y: 4, direction: :west).move_robot
+        expect(world.robot.x).to eq 3
+        expect(world.robot.y).to eq 4
       end
     end
 
     context 'when the next position is not valid' do
       it 'returns the current position' do
-        world.place_robot(x: 0, y: 0, direction: :south)
-        expect(world.next_position_for_robot.x).to eq 0
-        expect(world.next_position_for_robot.y).to eq 0
+        world.place_robot(x: 0, y: 0, direction: :south).move_robot
+        expect(world.robot.x).to eq 0
+        expect(world.robot.y).to eq 0
 
-        world.place_robot(x: 0, y: 0, direction: :west)
-        expect(world.next_position_for_robot.x).to eq 0
-        expect(world.next_position_for_robot.y).to eq 0
+        world.place_robot(x: 0, y: 0, direction: :west).move_robot
+        expect(world.robot.x).to eq 0
+        expect(world.robot.y).to eq 0
 
-        world.place_robot(x: 4, y: 5, direction: :north)
-        expect(world.next_position_for_robot.x).to eq 4
-        expect(world.next_position_for_robot.y).to eq 5
+        world.place_robot(x: 4, y: 5, direction: :north).move_robot
+        expect(world.robot.x).to eq 4
+        expect(world.robot.y).to eq 5
 
-        world.place_robot(x: 4, y: 5, direction: :east)
-        expect(world.next_position_for_robot.x).to eq 4
-        expect(world.next_position_for_robot.y).to eq 5
+        world.place_robot(x: 4, y: 5, direction: :east).move_robot
+        expect(world.robot.x).to eq 4
+        expect(world.robot.y).to eq 5
       end
     end
   end

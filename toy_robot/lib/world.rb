@@ -13,21 +13,15 @@ class World
 
   def place_robot(x:, y:, direction:)
     @robot = OpenStruct.new x: x, y: y, direction: direction
+    self
   end
 
   def place_target(x:, y:)
     @target = OpenStruct.new x: x, y: y
+    self
   end
 
-  def is_valid?(x:, y:)
-    x.between?(0, width - 1) && y.between?(0, height - 1)
-  end
-
-  def is_available?(x:, y:)
-    is_valid?(x: x, y: y) && !is_robot?(x: x, y: y) && !is_target?(x: x, y: y)
-  end
-
-  def next_position_for_robot
+  def move_robot
     case @robot.direction
     when :north
       x, y = @robot.x, @robot.y + 1
@@ -40,10 +34,17 @@ class World
     end
 
     if is_valid?(x: x, y: y)
-      OpenStruct.new(x: x, y: y, direction: @robot.direction)
-    else
-      @robot
+      @robot = OpenStruct.new(x: x, y: y, direction: @robot.direction)
     end
+    self
+  end
+
+  def is_valid?(x:, y:)
+    x&.between?(0, width - 1) && y&.between?(0, height - 1)
+  end
+
+  def is_available?(x:, y:)
+    is_valid?(x: x, y: y) && !is_robot?(x: x, y: y) && !is_target?(x: x, y: y)
   end
 
   private
