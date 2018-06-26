@@ -43,6 +43,18 @@ class Game
     print
   end
 
+  def rotate_robot_left
+    @world.rotate_robot_left
+    take_turn
+    print
+  end
+
+  def rotate_robot_right
+    @world.rotate_robot_right
+    take_turn
+    print
+  end
+
   def robot
     @world.robot
   end

@@ -116,4 +116,41 @@ RSpec.describe World do
       end
     end
   end
+
+  describe "#rotate_robot_left" do
+    before { world.place_robot(x: 0, y: 0, direction: :east) }
+
+    it "rotates the direction of the robot counter-clockwise" do
+      world.rotate_robot_left
+      expect(world.robot.direction).to eq :north
+
+      world.rotate_robot_left
+      expect(world.robot.direction).to eq :west
+
+      world.rotate_robot_left
+      expect(world.robot.direction).to eq :south
+
+      world.rotate_robot_left
+      expect(world.robot.direction).to eq :east
+    end
+  end
+
+  describe "#rotate_robot_right" do
+    before { world.place_robot(x: 0, y: 0, direction: :east) }
+
+    it "rotates the direction of the robot clockwise" do
+      world.rotate_robot_right
+      expect(world.robot.direction).to eq :south
+
+      world.rotate_robot_right
+      expect(world.robot.direction).to eq :west
+
+      world.rotate_robot_right
+      expect(world.robot.direction).to eq :north
+
+      world.rotate_robot_right
+      expect(world.robot.direction).to eq :east
+    end
+  end
+
 end

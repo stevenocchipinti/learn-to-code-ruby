@@ -21,12 +21,21 @@ RSpec.describe Game do
   end
 
   context "when the robot is moved" do
-    before { 2.times { game.move_robot } }
+    before do
+      game.move_robot
+      game.move_robot
+      game.rotate_robot_left
+      game.move_robot
+      game.move_robot
+      game.rotate_robot_right
+      game.move_robot
+      game.move_robot
+    end
 
     it "keeps track of the moves" do
-      expect(game.moves).to eq 2
-      expect(game.robot.x).to eq 2
-      expect(game.robot.y).to eq 0
+      expect(game.moves).to eq 8
+      expect(game.robot.x).to eq 4
+      expect(game.robot.y).to eq 2
       expect(game.robot.direction).to eq :east
     end
   end

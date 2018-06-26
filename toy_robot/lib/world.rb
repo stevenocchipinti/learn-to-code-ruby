@@ -4,6 +4,8 @@ require 'ostruct'
 class World
   attr_reader :width, :height, :robot, :target
 
+  DIRECTIONS = %i[north east south west]
+
   def initialize(width: 5, height: 5)
     @width = width
     @height = height
@@ -40,6 +42,24 @@ class World
     end
 
     self
+  end
+
+  def rotate_robot_left
+    i = DIRECTIONS.find_index @robot.direction
+    @robot = OpenStruct.new(
+      x: @robot.x,
+      y: @robot.y,
+      direction: DIRECTIONS[(i-1) % 4]
+    )
+  end
+
+  def rotate_robot_right
+    i = DIRECTIONS.find_index @robot.direction
+    @robot = OpenStruct.new(
+      x: @robot.x,
+      y: @robot.y,
+      direction: DIRECTIONS[(i+1) % 4]
+    )
   end
 
   def is_valid?(x:, y:)
