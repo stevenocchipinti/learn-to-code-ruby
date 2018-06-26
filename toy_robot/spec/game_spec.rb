@@ -39,4 +39,14 @@ RSpec.describe Game do
       expect(game.robot.direction).to eq :east
     end
   end
+
+  it "does not allow mutation of the robot directly" do
+    expect { game.robot.x = 4 }.to raise_error NoMethodError
+    expect(game.robot.x).to eq 0
+  end
+
+  it "does not allow mutation of the target directly" do
+    expect { game.target.x = 4 }.to raise_error NoMethodError
+    expect(game.robot.x).to eq 0
+  end
 end
