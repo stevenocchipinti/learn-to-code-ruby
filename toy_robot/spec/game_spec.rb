@@ -14,10 +14,22 @@ RSpec.describe Game do
     expect(game.robot.direction).to eq :east
   end
 
-  it "knows where the target is once its been placed" do
-    game.place_target(x: 3, y: 4)
-    expect(game.target.x).to eq 3
-    expect(game.target.y).to eq 4
+  context "when target coordinates are provided" do
+    it "is placed at that position" do
+      game.place_target(x: 3, y: 4)
+      expect(game.target.x).to eq 3
+      expect(game.target.y).to eq 4
+    end
+  end
+
+  context "when target coordinates are not provided" do
+    it "is placed in a random location" do
+      10.times do
+        game.place_target
+        expect(game.target.x).to be_between(0, 4)
+        expect(game.target.y).to be_between(0, 5)
+      end
+    end
   end
 
   context "when the robot is moved" do

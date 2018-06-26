@@ -28,7 +28,7 @@ class Game
     print
   end
 
-  def place_target(x:, y:)
+  def place_target(x: nil, y: nil)
     @world.place_target(
       x: x,
       y: y,

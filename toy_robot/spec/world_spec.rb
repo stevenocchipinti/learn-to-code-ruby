@@ -19,7 +19,7 @@ RSpec.describe World do
   end
 
   describe "#place_robot" do
-    context 'when placing a robot in a valid position' do
+    context 'when placing the robot in a valid position' do
       before { world.place_robot(x: 0, y: 1, direction: :east) }
 
       it 'should store the position of the robot' do
@@ -32,11 +32,21 @@ RSpec.describe World do
 
 
   describe "#place_target" do
-    context 'when placing a robot in a valid position' do
-      it 'stores the position of the target' do
+    context 'when given a valid position' do
+      it 'stores the target at that position' do
         world.place_target(x: 0, y: 1)
         expect(world.target.x).to eq 0
         expect(world.target.y).to eq 1
+      end
+    end
+
+    context 'when not given any position' do
+      it 'stores target with a random position' do
+        10.times do
+          world.place_target
+          expect(world.target.x).to be_between(0, 4)
+          expect(world.target.y).to be_between(0, 5)
+        end
       end
     end
   end
@@ -58,6 +68,26 @@ RSpec.describe World do
       expect(world.is_valid? x: 10, y: 10).to be false
       expect(world.is_valid? x: 4, y: 40).to be false
       expect(world.is_valid? x: 20, y: 3).to be false
+    end
+  end
+
+  describe "#is_available?" do
+    before { world.place_robot(x: 0, y: 1, direction: :east) }
+
+    it "returns true if the position is available" do
+      expect(world.is_available? x: 0, y: 0).to be true
+      expect(world.is_available? x: 1, y: 1).to be true
+      expect(world.is_available? x: 4, y: 4).to be true
+      expect(world.is_available? x: 2, y: 3).to be true
+      expect(world.is_available? x: 2, y: 4).to be true
+    end
+
+    it "returns false if the position is not available" do
+      expect(world.is_available? x: 0, y: 1).to be false
+      expect(world.is_available? x: -1, y: 0).to be false
+      expect(world.is_available? x: 10, y: 10).to be false
+      expect(world.is_available? x: 4, y: 40).to be false
+      expect(world.is_available? x: 20, y: 3).to be false
     end
   end
 

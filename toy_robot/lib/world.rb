@@ -35,8 +35,13 @@ class World
     self
   end
 
-  def place_target(x:, y:, when_reached: -> {})
-    @target = Target.new x: x, y: y, callback: when_reached
+  def place_target(x: nil, y: nil, when_reached: -> {})
+    random_position = random_available_position
+    @target = Target.new(
+      x: x || random_position.fetch(:x),
+      y: y || random_position.fetch(:y),
+      callback: when_reached
+    )
     self
   end
 
@@ -83,10 +88,26 @@ class World
     x&.between?(0, width - 1) && y&.between?(0, height - 1)
   end
 
+  def is_available?(x:, y:)
+    is_valid?(x: x, y: y) && !is_robot?(x: x, y: y) && !is_target?(x: x, y: y)
+  end
+
   private
 
   def is_target?(x:, y:)
     @target.x == x && @target.y == y
+  end
+
+  def is_robot?(x:, y:)
+    @robot.x == x && @robot.y == y
+  end
+
+  def random_available_position
+    (0...@width).to_a
+      .product((0...@height).to_a)
+      .map { |pair| {x: pair.first, y: pair.last} }
+      .select { |position| is_available?(position) }
+      .sample
   end
 end
 
