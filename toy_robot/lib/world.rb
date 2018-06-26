@@ -1,34 +1,16 @@
-class RobotController
-  def initialize(robot:, world:)
-    @robot = robot
-    @world = world
-  end
-end
-
+# Underlying data structure
 class World
   attr_reader :width, :height, :robot, :target
 
-  def initialize(width: 5, height: 5)
+  def initialize(width: 5, height: 5, robot:, target:)
     @width = width
     @height = height
-    @robot = OpenStruct.new
-    @target = OpenStruct.new
-    @turns = 0
-    print
-  end
-
-  def take_turn
-    @turns += 1
-  end
-
-  def print(delay: 1)
-    WorldPrinter.print_frame(world: self, number_of_moves: @turns)
-    sleep delay
+    @robot = robot
+    @target = target
   end
 
   def place_robot(x:, y:, direction:)
     @robot = OpenStruct.new x: x, y: y, direction: direction
-    RobotController.new robot: @robot, world: self
-    take_turn and print
   end
 end
+

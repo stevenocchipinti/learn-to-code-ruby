@@ -1,16 +1,9 @@
 # Prints an ASCII version of the world
-
-CSI = "\e[".freeze
-CLEAR = "#{CSI}H#{CSI}J".freeze
-
-ARROWS = {
-  west: '←',
-  north: '↑',
-  east: '→',
-  south: '↓'
-}.freeze
-
 class WorldPrinter
+  CSI = "\e[".freeze
+  CLEAR = "#{CSI}H#{CSI}J".freeze
+  ARROWS = {west: '←', north: '↑', east: '→', south: '↓'}.freeze
+
   def initialize(world:, number_of_moves:)
     @world = world
     @robot = world.robot
