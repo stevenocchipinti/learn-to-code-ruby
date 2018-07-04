@@ -6,8 +6,8 @@ the shorthand versions of the syntax further into the material.
 * Data types: Strings, Integers, Floats
 * Variables
 * Constants
-* Printing
-* Special characters
+* Printing: puts, print, p
+* Special characters: \n
 * Getting user input
 * Converting between data types (`int` and `string`)
 

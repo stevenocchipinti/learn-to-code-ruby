@@ -7,7 +7,7 @@
 #
 #   - Data types: String, Integer, Float
 #   - `print`, `puts` and `p`
-#   - Basic arithmetic: +, -, *, /
+#   - Basic arithmetic: +, -, *, /, ()
 #   - Variables, constants and return values
 #   - String interpolation
 #   - Object methods
