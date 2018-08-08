@@ -62,7 +62,7 @@ extend Test::Unit::Assertions
 # ------------------------------------------------------------------------------
 
 area = area_of_rectangle(10, 20)
-assert_equal area, 200
+assert_equal(area, 200)
 
 
 # ------------------------------------------------------------------------------
@@ -72,8 +72,8 @@ assert_equal area, 200
 #   Math::PI
 # ------------------------------------------------------------------------------
 
-area = area_of_circle 10
-assert_equal area, 314.1592653589793
+# area = area_of_circle 10
+# assert_equal area, 314.1592653589793
 
 
 # ------------------------------------------------------------------------------
@@ -84,8 +84,8 @@ assert_equal area, 314.1592653589793
 # Remember the volume of a cylinder is: πr²h (area * height)
 # ------------------------------------------------------------------------------
 
-area = volume_of_cylinder(10, 20)
-assert_equal area, 6283.185307179587
+# area = volume_of_cylinder(10, 20)
+# assert_equal area, 6283.185307179587
 
 
 # ------------------------------------------------------------------------------
@@ -94,8 +94,8 @@ assert_equal area, 6283.185307179587
 #   { radius: 10, height: 20 }
 # ------------------------------------------------------------------------------
 
-area = volume_of_cylinder_from_hash({radius: 10, height: 20})
-assert_equal area, 6283.185307179587
+# area = volume_of_cylinder_from_hash({radius: 10, height: 20})
+# assert_equal area, 6283.185307179587
 
 
 # ------------------------------------------------------------------------------

@@ -1,17 +1,13 @@
-require_relative './lib/game'
+require_relative './lib/toy_robot/lib/game'
 
-WIDTH = 15
-HEIGHT = 10
+WIDTH = 5
+HEIGHT = 5
 
-game = Game.new(width: WIDTH, height: HEIGHT, delay: 0.1)
-
+game = Game.new(width: WIDTH, height: HEIGHT)
 game.place_robot(x: 0, y: 0, direction: :east)
-game.place_target
+game.place_target(x: 4, y: 2)
 
-rows = game.target.y - game.robot.y
-cols = game.target.x - game.robot.x
-
-game.rotate_robot_left
-rows.times { game.move_robot }
-game.rotate_robot_right
-cols.times { game.move_robot }
+# Use the following methods on the game object to move the robot to the target:
+#   game.move_robot
+#   game.rotate_robot_right
+#   game.rotate_robot_left
