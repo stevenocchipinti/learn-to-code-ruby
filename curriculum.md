@@ -18,37 +18,43 @@ the shorthand versions of the syntax further into the material.
 
 * Calling methods on an object
 * Integer methods, Float methods, String methods
+* built in functions (like rand, puts and many more)
+
+* Methods vs functions
+* Functions
+* Shorthand syntax sneak peak: function parentheses
+* Default values for functions
+
+* Test Driven Development (principles only)
+* Test assertions sneak peak: Used in the function exercise
 
 * Data types: Booleans
 * Predicate methods
 * Comparison operators
-* built in functions (like rand)
 
 * Control flow (`if`, `elsif`, `case`, etc.)
 
 * Arrays
 
-* Shorthand syntax!
-
 * Loops (finite, infinite and break)
 * Enumerable (each, map, filter, etc.)
+* Blocks (do...end, {})
 
-* Symbols
 * Hashes
+* Symbols
 
 * Parsing JSON and CSV
 
-* Incrementing a counter
-* Generating a random number
-
-# Functions should probably be higher up :/
-
-* Functions
-* Default values for functions
-
-* Test assertions
-* Test Driven Development
+* Shorthand hash syntax: 1.8 vs 1.9
+* Shorthand syntax: function parentheses, implicit return, hash curly braces
 
 * Classes
 
+# This should be moved to a suitable place based on exercises
+* Incrementing a counter
+* Generating a random number
+
 * Exceptions
+
+* Test Driven Development recap
+* Test assertions: Using them
