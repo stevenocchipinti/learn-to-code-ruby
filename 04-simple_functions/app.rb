@@ -23,12 +23,18 @@
 #
 ################################################################################
 
-puts "320°F is actually #{(320 - 999) / 1.8}°C"
-puts "330°F is actually #{(330 - 999) / 1.8}°C"
-puts "340°F is actually #{(340 - 999) / 1.8}°C"
-puts "350°F is actually #{(350 - 999) / 1.8}°C"
-puts "360°F is actually #{(360 - 999) / 1.8}°C"
-puts "370°F is actually #{(370 - 999) / 1.8}°C"
-puts "380°F is actually #{(380 - 999) / 1.8}°C"
-puts "390°F is actually #{(390 - 999) / 1.8}°C"
-puts "400°F is actually #{(400 - 999) / 1.8}°C"
+
+def fahrenheit_to_celsius(f)
+  return ((f - 32) / 1.8).round()
+end
+
+
+puts "320°F is actually #{fahrenheit_to_celsius(320)}°C"
+puts "330°F is actually #{fahrenheit_to_celsius(330)}°C"
+puts "340°F is actually #{fahrenheit_to_celsius(340)}°C"
+puts "350°F is actually #{fahrenheit_to_celsius(350)}°C"
+puts "360°F is actually #{fahrenheit_to_celsius(360)}°C"
+puts "370°F is actually #{fahrenheit_to_celsius(370)}°C"
+puts "380°F is actually #{fahrenheit_to_celsius(380)}°C"
+puts "390°F is actually #{fahrenheit_to_celsius(390)}°C"
+puts "400°F is actually #{fahrenheit_to_celsius(400)}°C"

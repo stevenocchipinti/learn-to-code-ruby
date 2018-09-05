@@ -12,8 +12,6 @@
 #   - More functions (nested function calls and re-use)
 #   - Test assertions
 #   - Test Driven Development
-#   - Math library
-#   - Hashes
 #
 # This exercise is broken into two parts:
 #   1. Some functions: These have the logic of the calculations
@@ -33,19 +31,7 @@
 
 
 def area_of_rectangle(width, height)
-  width * height
-end
-
-def area_of_circle(radius)
-  Math::PI * (radius * radius)
-end
-
-def volume_of_cylinder(radius, height)
-  area_of_circle(radius) * height
-end
-
-def volume_of_cylinder_from_hash(data)
-  volume_of_cylinder data[:radius], data[:height]
+  return width * height
 end
 
 ################################################################################
@@ -72,8 +58,8 @@ assert_equal(area, 200)
 #   Math::PI
 # ------------------------------------------------------------------------------
 
-# area = area_of_circle 10
-# assert_equal area, 314.1592653589793
+# area = area_of_circle(10)
+# assert_equal(area, 314.1592653589793)
 
 
 # ------------------------------------------------------------------------------
@@ -85,18 +71,7 @@ assert_equal(area, 200)
 # ------------------------------------------------------------------------------
 
 # area = volume_of_cylinder(10, 20)
-# assert_equal area, 6283.185307179587
-
-
-# ------------------------------------------------------------------------------
-# 4. Instead of the volume_of_cylinder function taking two numbers as input,
-# make a new version of it that takes a hash of values like this:
-#   { radius: 10, height: 20 }
-# ------------------------------------------------------------------------------
-
-# area = volume_of_cylinder_from_hash({radius: 10, height: 20})
-# assert_equal area, 6283.185307179587
-
+# assert_equal(area, 6283.185307179587)
 
 # ------------------------------------------------------------------------------
 

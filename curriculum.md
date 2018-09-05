@@ -1,7 +1,10 @@
-# Outline
+Outline
+=======
 
 Note: Shorthand ruby is a source of confusion, use long hand and introduce
 the shorthand versions of the syntax further into the material.
+
+---
 
 * Data types: Strings, Integers, Floats
 * Variables
@@ -10,11 +13,17 @@ the shorthand versions of the syntax further into the material.
 * Printing: puts, print, p
 * String Interpolation
 
+---
+
 * Special characters: \n
 * Getting user input
 
+---
+
 * Converting between data types (`int` and `string`)
 * Pry (ls, ?, $)
+
+---
 
 * Calling methods on an object
 * Integer methods, Float methods, String methods
@@ -28,11 +37,15 @@ the shorthand versions of the syntax further into the material.
 * Test Driven Development (principles only)
 * Test assertions sneak peak: Used in the function exercise
 
+---
+
 * Data types: Booleans
 * Predicate methods
 * Comparison operators
 
 * Control flow (`if`, `elsif`, `case`, etc.)
+
+---
 
 * Arrays
 
@@ -40,19 +53,32 @@ the shorthand versions of the syntax further into the material.
 * Enumerable (each, map, filter, etc.)
 * Blocks (do...end, {})
 
+---
+
 * Hashes
-* Symbols
+* Data types: Symbols
+
+---
 
 * Parsing JSON and CSV
 
 * Shorthand hash syntax: 1.8 vs 1.9
 * Shorthand syntax: function parentheses, implicit return, hash curly braces
 
+---
+
 * Classes
 
-# This should be moved to a suitable place based on exercises
+
+Bonus Material
+--------------
+
+These should be moved to a suitable place based on exercises:
+
 * Incrementing a counter
 * Generating a random number
+
+---
 
 * Exceptions
 
