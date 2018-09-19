@@ -20,11 +20,8 @@ the shorthand versions of the syntax further into the material.
 
 ---
 
-* Converting between data types (`int` and `string`)
 * Pry (ls, ?, $)
-
----
-
+* Converting between data types (`int` and `string`)
 * Calling methods on an object
 * Integer methods, Float methods, String methods
 * built in functions (like rand, puts and many more)
@@ -42,28 +39,27 @@ the shorthand versions of the syntax further into the material.
 * Data types: Booleans
 * Predicate methods
 * Comparison operators
+* Boolean logic: and, or, not
 
 * Control flow (`if`, `elsif`, `case`, etc.)
 
 ---
 
-* Arrays
+* Loops (times, finite, infinite and break)
 
-* Loops (finite, infinite and break)
+* Arrays
 * Enumerable (each, map, filter, etc.)
 * Blocks (do...end, {})
+
+* Incrementing a counter
+* Generating a random number
 
 ---
 
 * Hashes
 * Data types: Symbols
 
----
-
 * Parsing JSON and CSV
-
-* Shorthand hash syntax: 1.8 vs 1.9
-* Shorthand syntax: function parentheses, implicit return, hash curly braces
 
 ---
 
@@ -73,12 +69,10 @@ the shorthand versions of the syntax further into the material.
 Bonus Material
 --------------
 
-These should be moved to a suitable place based on exercises:
-
-* Incrementing a counter
-* Generating a random number
-
----
+* Shorthand hash syntax: 1.8 vs 1.9
+* Shorthand syntax:
+  * function parentheses, implicit return, hash curly braces, postfix if, unless
+  * Ternary statements
 
 * Exceptions
 

@@ -34,7 +34,7 @@
 #
 # Extension Exercises:
 #
-#   5. Add a non-taxable shipping cost of $10 to the caluclation and display
+#   5. Add a non-taxable shipping cost of $10 to the calculation and display
 #   everything to the user (price, tax, shipping, total)
 #
 #   6. If the price (not including tax) is greater than $1000 then shipping is

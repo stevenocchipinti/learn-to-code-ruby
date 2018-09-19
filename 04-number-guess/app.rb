@@ -27,6 +27,8 @@
 #      and when the player guesses a larger number, show a message saying:
 #        "Nope.... lower"
 #
+# Extension exercises:
+#
 #   3. Let the player have 5 guesses
 #
 #   4. Let the player have unlimited number of guesses, make sure they have the
