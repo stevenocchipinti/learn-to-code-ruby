@@ -20,12 +20,12 @@ RSpec.describe World do
 
   describe "#place_robot" do
     context 'when placing the robot in a valid position' do
-      before { world.place_robot(x: 0, y: 1, direction: :east) }
+      before { world.place_robot(x: 0, y: 1, direction: "east") }
 
       it 'should store the position of the robot' do
         expect(world.robot.x).to eq 0
         expect(world.robot.y).to eq 1
-        expect(world.robot.direction).to eq :east
+        expect(world.robot.direction).to eq "east"
       end
     end
   end
@@ -52,7 +52,7 @@ RSpec.describe World do
   end
 
   describe "#is_valid_position?" do
-    before { world.place_robot(x: 0, y: 1, direction: :east) }
+    before { world.place_robot(x: 0, y: 1, direction: "east") }
 
     it "returns true if the position is valid" do
       expect(world.is_valid_position? x: 0, y: 0).to be true
@@ -72,7 +72,7 @@ RSpec.describe World do
   end
 
   describe "#is_available?" do
-    before { world.place_robot(x: 0, y: 1, direction: :east) }
+    before { world.place_robot(x: 0, y: 1, direction: "east") }
 
     it "returns true if the position is available" do
       expect(world.is_available? x: 0, y: 0).to be true
@@ -94,19 +94,19 @@ RSpec.describe World do
   describe "#move_robot" do
     context 'when the next position is valid' do
       it 'returns the next position' do
-        world.place_robot(x: 0, y: 0, direction: :north).move_robot
+        world.place_robot(x: 0, y: 0, direction: "north").move_robot
         expect(world.robot.x).to eq 0
         expect(world.robot.y).to eq 1
 
-        world.place_robot(x: 0, y: 0, direction: :east).move_robot
+        world.place_robot(x: 0, y: 0, direction: "east").move_robot
         expect(world.robot.x).to eq 1
         expect(world.robot.y).to eq 0
 
-        world.place_robot(x: 4, y: 4, direction: :south).move_robot
+        world.place_robot(x: 4, y: 4, direction: "south").move_robot
         expect(world.robot.x).to eq 4
         expect(world.robot.y).to eq 3
 
-        world.place_robot(x: 4, y: 4, direction: :west).move_robot
+        world.place_robot(x: 4, y: 4, direction: "west").move_robot
         expect(world.robot.x).to eq 3
         expect(world.robot.y).to eq 4
       end
@@ -114,19 +114,19 @@ RSpec.describe World do
 
     context 'when the next position is not valid' do
       it 'returns the current position' do
-        world.place_robot(x: 0, y: 0, direction: :south).move_robot
+        world.place_robot(x: 0, y: 0, direction: "south").move_robot
         expect(world.robot.x).to eq 0
         expect(world.robot.y).to eq 0
 
-        world.place_robot(x: 0, y: 0, direction: :west).move_robot
+        world.place_robot(x: 0, y: 0, direction: "west").move_robot
         expect(world.robot.x).to eq 0
         expect(world.robot.y).to eq 0
 
-        world.place_robot(x: 4, y: 5, direction: :north).move_robot
+        world.place_robot(x: 4, y: 5, direction: "north").move_robot
         expect(world.robot.x).to eq 4
         expect(world.robot.y).to eq 5
 
-        world.place_robot(x: 4, y: 5, direction: :east).move_robot
+        world.place_robot(x: 4, y: 5, direction: "east").move_robot
         expect(world.robot.x).to eq 4
         expect(world.robot.y).to eq 5
       end
@@ -134,7 +134,7 @@ RSpec.describe World do
 
     context "when the next position is a target" do
       before do
-        world.place_robot(x: 0, y: 0, direction: :east)
+        world.place_robot(x: 0, y: 0, direction: "east")
         @callback_fired = false
         callback = -> { @callback_fired = true }
         world.place_target(x: 1, y: 0, when_reached: callback)
@@ -148,38 +148,38 @@ RSpec.describe World do
   end
 
   describe "#rotate_robot_left" do
-    before { world.place_robot(x: 0, y: 0, direction: :east) }
+    before { world.place_robot(x: 0, y: 0, direction: "east") }
 
     it "rotates the direction of the robot counter-clockwise" do
       world.rotate_robot_left
-      expect(world.robot.direction).to eq :north
+      expect(world.robot.direction).to eq "north"
 
       world.rotate_robot_left
-      expect(world.robot.direction).to eq :west
+      expect(world.robot.direction).to eq "west"
 
       world.rotate_robot_left
-      expect(world.robot.direction).to eq :south
+      expect(world.robot.direction).to eq "south"
 
       world.rotate_robot_left
-      expect(world.robot.direction).to eq :east
+      expect(world.robot.direction).to eq "east"
     end
   end
 
   describe "#rotate_robot_right" do
-    before { world.place_robot(x: 0, y: 0, direction: :east) }
+    before { world.place_robot(x: 0, y: 0, direction: "east") }
 
     it "rotates the direction of the robot clockwise" do
       world.rotate_robot_right
-      expect(world.robot.direction).to eq :south
+      expect(world.robot.direction).to eq "south"
 
       world.rotate_robot_right
-      expect(world.robot.direction).to eq :west
+      expect(world.robot.direction).to eq "west"
 
       world.rotate_robot_right
-      expect(world.robot.direction).to eq :north
+      expect(world.robot.direction).to eq "north"
 
       world.rotate_robot_right
-      expect(world.robot.direction).to eq :east
+      expect(world.robot.direction).to eq "east"
     end
   end
 

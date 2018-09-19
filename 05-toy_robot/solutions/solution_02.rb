@@ -3,10 +3,56 @@ require_relative '../lib/toy_robot/lib/game'
 WIDTH = 5
 HEIGHT = 5
 
-game = Game.new(width: WIDTH, height: HEIGHT, delay: 0.1)
-game.place_robot(x: 0, y: 0, direction: :east)
+game = Game.new(WIDTH, HEIGHT, 0.1)
+game.place_robot(0, 0, "east")
 
 game.place_target
+
+# First cut
+
+# game.move_robot
+# game.move_robot
+# game.move_robot
+# game.move_robot
+
+# game.rotate_robot_left
+# game.move_robot
+# game.rotate_robot_left
+
+# game.move_robot
+# game.move_robot
+# game.move_robot
+# game.move_robot
+
+# game.rotate_robot_right
+# game.move_robot
+# game.rotate_robot_right
+
+# game.move_robot
+# game.move_robot
+# game.move_robot
+# game.move_robot
+
+# game.rotate_robot_left
+# game.move_robot
+# game.rotate_robot_left
+
+# game.move_robot
+# game.move_robot
+# game.move_robot
+# game.move_robot
+
+# game.rotate_robot_right
+# game.move_robot
+# game.rotate_robot_right
+
+# game.move_robot
+# game.move_robot
+# game.move_robot
+# game.move_robot
+
+
+# Second cut
 
 HEIGHT.times do |row|
   # Move along the row

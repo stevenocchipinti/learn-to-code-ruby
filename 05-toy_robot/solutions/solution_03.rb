@@ -1,10 +1,10 @@
 require_relative '../lib/toy_robot/lib/game'
 
-WIDTH = 5
-HEIGHT = 5
+WIDTH = 18
+HEIGHT = 9
 
-game = Game.new(width: WIDTH, height: HEIGHT, delay: 0.1)
-game.place_robot(x: 0, y: 0, direction: :east)
+game = Game.new(WIDTH, HEIGHT, 0.1)
+game.place_robot(0, 0, "east")
 
 game.place_target
 

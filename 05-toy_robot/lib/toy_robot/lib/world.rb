@@ -4,7 +4,7 @@ require_relative './target'
 # Underlying data structure
 class World
   attr_reader :width, :height, :robot, :target
-  DIRECTIONS = %i[north east south west]
+  DIRECTIONS = %w[north east south west]
 
   def initialize(width: 5, height: 5)
     @width = width
@@ -32,13 +32,13 @@ class World
 
   def move_robot
     case @robot.direction
-    when :north
+    when "north"
       x, y = @robot.x, @robot.y + 1
-    when :east
+    when "east"
       x, y = @robot.x + 1, @robot.y
-    when :south
+    when "south"
       x, y = @robot.x, @robot.y - 1
-    when :west
+    when "west"
       x, y = @robot.x - 1, @robot.y
     end
 

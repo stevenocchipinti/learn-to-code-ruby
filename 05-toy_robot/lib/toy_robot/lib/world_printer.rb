@@ -2,7 +2,7 @@
 class WorldPrinter
   CSI = "\e[".freeze
   CLEAR = "#{CSI}H#{CSI}J".freeze
-  ARROWS = {west: '←', north: '↑', east: '→', south: '↓'}.freeze
+  ARROWS = {"west" => '←', "north" => '↑', "east" => '→', "south" => '↓'}.freeze
 
   def initialize(world:, number_of_moves:)
     @world = world

@@ -2,21 +2,21 @@ require 'rspec'
 require_relative '../lib/game'
 
 RSpec.describe Game do
-  subject(:game) { Game.new(width: 5, height: 6, quiet: true, delay: 0) }
+  subject(:game) { Game.new(5, 6, 0, true) }
 
   before do
-    game.place_robot(x: 0, y: 0, direction: :east)
+    game.place_robot(0, 0, "east")
   end
 
   it "knows where the robot is once its been placed" do
     expect(game.robot.x).to eq 0
     expect(game.robot.y).to eq 0
-    expect(game.robot.direction).to eq :east
+    expect(game.robot.direction).to eq "east"
   end
 
   context "when target coordinates are provided" do
     it "is placed at that position" do
-      game.place_target(x: 3, y: 4)
+      game.place_target(3, 4)
       expect(game.target.x).to eq 3
       expect(game.target.y).to eq 4
     end
@@ -48,7 +48,7 @@ RSpec.describe Game do
       expect(game.moves).to eq 8
       expect(game.robot.x).to eq 4
       expect(game.robot.y).to eq 2
-      expect(game.robot.direction).to eq :east
+      expect(game.robot.direction).to eq "east"
     end
   end
 

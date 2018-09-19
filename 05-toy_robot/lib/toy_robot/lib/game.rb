@@ -9,11 +9,11 @@ end
 class Game
   attr_reader :moves
 
-  def initialize(width: 5, height: 5, quiet: false, delay: 0.5)
+  def initialize(width=5, height=5, delay=0.5, quiet=false)
     @world = World.new(width: width, height: height)
     @moves = 0
-    @quiet = quiet
     @delay = delay
+    @quiet = quiet
     print
   end
 
@@ -23,12 +23,12 @@ class Game
     true
   end
 
-  def place_robot(x:, y:, direction:)
+  def place_robot(x, y, direction)
     @world.place_robot(x: x, y: y, direction: direction)
     print
   end
 
-  def place_target(x: nil, y: nil)
+  def place_target(x=nil, y=nil)
     @world.place_target(
       x: x,
       y: y,

@@ -27,7 +27,7 @@ class Robot
       "Invalid arguments:\n"\
       "x = #{x}, y = #{y}, direction = #{direction}\n"\
       "<x> and <y> should be valid integers and "\
-      "<direction> should be one of these symbols:\n#{World::DIRECTIONS.to_s}"
+      "<direction> should be one of these strings:\n#{World::DIRECTIONS.to_s}"
     )
   end
 end
