@@ -52,7 +52,6 @@ the shorthand versions of the syntax further into the material.
 * Blocks (do...end, {})
 
 * Incrementing a counter
-* Generating a random number
 
 ---
 
@@ -64,7 +63,7 @@ the shorthand versions of the syntax further into the material.
 ---
 
 * Classes
-
+* Exceptions
 
 Bonus Material
 --------------
@@ -74,7 +73,7 @@ Bonus Material
   * function parentheses, implicit return, hash curly braces, postfix if, unless
   * Ternary statements
 
-* Exceptions
+* Options hash idiom, named parameters
 
 * Test Driven Development recap
 * Test assertions: Using them

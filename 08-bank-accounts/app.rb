@@ -13,6 +13,7 @@
 #   - Default values for functions
 #   - Exceptions
 #   - Tests and TDD
+#   - Symbols
 #
 # This exercise is broken into two parts:
 #   1. An Account class: This has the logic of a bank account

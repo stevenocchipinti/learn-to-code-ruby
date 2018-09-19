@@ -39,24 +39,17 @@
 #   6. When the game has ended, show the user how many guesses it took them
 #   (before they won or quit the game)
 #
-#   7. Make this a single player game by starting with a random number between
-#   0-20 that the player has to try to guess - don't forget to change the
-#   messages to the user to make that clear
-#
 ################################################################################
 
-# This line is needed for the `noecho` trick, explained below
-require 'io/console'
-
-print "Player 1, pick a number: "
-number = STDIN.noecho(&:gets).chomp.to_i
+number = 5
+# Uncomment this once you've completed exercises 1 and 2
+# number = rand(10)
 
 # NOTE: The above line uses `STDIN.noecho` and is basically the same as:
 #   number = gets
 # except the characters that the user types in are hidden for extra security
 
-puts
-puts "Player 2, try to guess the number!"
+puts "Try to guess the number!"
 print "Guess: "
 guess = gets.chomp.to_i
 

@@ -41,3 +41,7 @@
 #   free!
 #
 ################################################################################
+#
+# TODO: Add the option of a digital download that implies free shipping
+#       This will exercise the boolean logic operators (e.g. &&)
+#

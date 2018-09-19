@@ -46,8 +46,9 @@
 #   print all the over age guests first followed by a blank line, then a list
 #   of all the under age guests. For example:
 #
-#     Lyndia Mericle is approximately 36 years old
-#     ...
+#     The following guests ARE allowed in:
+#     - Lyndia Mericle is approximately 36 years old
+#     - ...
 #
 #     The following guests are underage and NOT allowed in:
 #     - Errol Mayr (age: 10)
