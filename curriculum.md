@@ -46,12 +46,12 @@ the shorthand versions of the syntax further into the material.
 ---
 
 * Loops (times, finite, infinite and break)
-
-* Arrays
-* Enumerable (each, map, filter, etc.)
 * Blocks (do...end, {})
 
 * Incrementing a counter
+
+* Arrays
+* Enumerable (each, map, filter, etc.)
 
 ---
 

@@ -8,11 +8,9 @@
 #   - Variables
 #   - Getting user input, newline characters
 #   - Comparison operators (`==`, `<=`, `>=`, etc.)
-#   - Data structures (arrays and hashes)
-#   - Control flow (`if`, `elsif`, `case`, etc.)
-#   - Loops (finite, infinite and loop control flow like: `break`, `continue`)
+#   - Control flow (`if`, `elsif`, etc.)
+#   - Loops (finite, infinite and loop control flow like: `break`)
 #   - Incrementing a number
-#   - Generating a random number
 #   - Converting between data types (`int` and `string`)
 #
 # Exercises:
@@ -44,10 +42,6 @@
 number = 5
 # Uncomment this once you've completed exercises 1 and 2
 # number = rand(10)
-
-# NOTE: The above line uses `STDIN.noecho` and is basically the same as:
-#   number = gets
-# except the characters that the user types in are hidden for extra security
 
 puts "Try to guess the number!"
 print "Guess: "
