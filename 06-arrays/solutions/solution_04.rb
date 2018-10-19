@@ -22,16 +22,30 @@
 #     The big boss is: Claire Clark
 #
 #
-#   3. Print each of the names, sorted alphabetically, in the format below:
+#   3. Print each of the names, for example:
+#
+#      - claire clark
+#      - bob baker
+#      - alice armstrong
+#
+#
+#   4. Print each of the names in the format below:
+#
+#      - Clark, Claire
+#      - Baker, Bob
+#      - Armstrong, Alice
+#
+#
+#   5. Print each of the names sorted alphabetically, for example:
 #
 #      - Armstrong, Alice
 #      - Baker, Bob
 #      - Clark, Claire
 #
 #
-#   4. Add 'daniel dunn' to the list (dynamically, before printing the list)
+#   6. Add 'daniel dunn' to the list (dynamically, before printing the list)
 #
-#   5. The boss should have an asterisk next to their name in the list, for
+#   7. The boss should have an asterisk next to their name in the list, for
 #   example:
 #
 #      - Armstrong, Alice
@@ -43,7 +57,6 @@
 
 # NOTE: Don't modify this line of code directly:
 names = ["claire clark", "bob baker", "alice armstrong"]
-names.push("daniel dunn")
 
 
 def first_last_format(name)
@@ -55,9 +68,9 @@ def last_first_format(name)
 end
 
 
-puts "The big boss is: #{first_last_format(names.first)}"
-puts
+boss = names[0]
+puts "The big boss is: #{first_last_format(boss)}"
 
-names.sort.each do |name|
+names.each do |name|
   puts " - #{last_first_format(name)}"
 end

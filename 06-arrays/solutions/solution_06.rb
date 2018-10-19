@@ -57,13 +57,21 @@
 
 # NOTE: Don't modify this line of code directly:
 names = ["claire clark", "bob baker", "alice armstrong"]
+names.push("daniel dunn")
+
+
+def first_last_format(name)
+  return "#{name.split.first.capitalize} #{name.split.last.capitalize}"
+end
+
+def last_first_format(name)
+  return "#{name.split.last.capitalize}, #{name.split.first.capitalize}"
+end
+
 
 boss = names[0]
-first = boss.split.first.capitalize
-last = boss.split.last.capitalize
+puts "The big boss is: #{first_last_format(boss)}"
 
-puts "The big boss is: #{first} #{last}"
-
-names.each do |name|
-  puts " - #{name}"
+names.sort.each do |name|
+  puts " - #{last_first_format(name)}"
 end

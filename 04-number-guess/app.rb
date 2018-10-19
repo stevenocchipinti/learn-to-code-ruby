@@ -43,8 +43,30 @@ number = 5
 # Uncomment this once you've completed exercises 1 and 2
 # number = rand(10)
 
-puts "Try to guess the number!"
-print "Guess: "
-guess = gets.chomp.to_i
+number_of_guesses = 0
 
-puts number == guess
+puts "Try to guess the number!"
+
+loop do
+
+  number_of_guesses = number_of_guesses + 1
+
+  print "Guess: "
+  input = gets.chomp
+  guess = input.to_i
+
+  if input == "exit"
+    puts "You had #{number_of_guesses - 1} guesses"
+    puts "Bye bye"
+    exit
+  elsif number == guess
+    puts "You had #{number_of_guesses} guesses"
+    puts "Well done! You got it right!"
+    exit
+  elsif number > guess
+    puts "Nope.... higher"
+  elsif number < guess
+    puts "Nope.... lower"
+  end
+
+end
