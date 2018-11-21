@@ -64,7 +64,7 @@
 #
 # Extension exercises:
 #
-#   1. Change the program to use a CSV file (guests.csv) instead of the JSON
+#   8. Change the program to use a CSV file (guests.csv) instead of the JSON
 #   file (guests.json)
 #
 #
@@ -76,5 +76,5 @@ file_contents = File.read("guests.json")
 data = JSON.parse(file_contents)
 
 data["guests"].each do |guest|
-  puts guest
+  puts "#{guest["firstName"]} #{guest["secondName"]} was born in #{guest["birthYear"]}"
 end

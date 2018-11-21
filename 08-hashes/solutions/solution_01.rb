@@ -103,3 +103,4 @@ employee_database = {
 }
 
 
+puts employee_database["e0003"]["last_name"]

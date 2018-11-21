@@ -57,3 +57,28 @@
 
 # NOTE: Don't modify this line of code directly:
 names = ["claire clark", "bob baker", "alice armstrong"]
+names.push("daniel dunn")
+
+the_boss = names.first
+
+def first_last(name)
+  first = name.split.first.capitalize
+  last = name.split.last.capitalize
+  return "#{first} #{last}"
+end
+
+def last_first(name)
+  first = name.split.first.capitalize
+  last = name.split.last.capitalize
+  return "#{last}, #{first}"
+end
+
+puts "The boss is: #{first_last(the_boss)}"
+
+names.sort.each do |name|
+  if name == the_boss
+    puts "- * #{last_first(name)}"
+  else
+    puts "- #{last_first(name)}"
+  end
+end
